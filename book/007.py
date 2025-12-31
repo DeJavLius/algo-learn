@@ -3,23 +3,17 @@ m = int(input())
 mat = sorted([int(a) for a in input().split()])
 
 count = 0
-si = 0
-ei = 1
-size = len(mat) - 1
-sum = 0
+s_idx = 0
+e_idx = len(mat)-1
 
-while si < size - 1:
-  if ei == size:
-    si += 1
-    ei = si + 1
-  else:
-    ei += 1
-
-  sum = mat[si] + mat[ei]
-
-  if sum == m:
+while s_idx < e_idx:
+  if mat[s_idx] + mat[e_idx] == m:
     count += 1
+    s_idx += 1
+    e_idx -= 1
+  elif mat[s_idx] + mat[e_idx] < m:
+    s_idx += 1
   else:
-    sum -= mat[ei]
+    e_idx -= 1
 
 print(count)
