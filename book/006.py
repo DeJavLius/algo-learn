@@ -1,3 +1,4 @@
+# 2018
 n = int(input())
 count, si, ei, result = 1, 1, 1, 1
 

@@ -1,3 +1,4 @@
+# 1940
 n = int(input())
 m = int(input())
 mat = sorted([int(a) for a in input().split()])
