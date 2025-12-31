@@ -17,3 +17,17 @@
 #
 # 출력
 # 첫 번째 줄에 민호가 만들 수 있는 비밀번호의 종류의 수를 출력해라.
+import sys
+input = sys.stdin.readline
+s, p = map(int, input().split())
+dna = input()
+req = [-1 if a == 0 else a for a in map(int, input().split())]
+
+count = 0
+
+for s_i in range(s - p + 1):
+  enc = dna[s_i:s_i + p]
+  if enc.count("A") >= req[0] and enc.count("C") >= req[1] and enc.count("G") >= req[2] and enc.count("T") >= req[3]:
+    count += 1
+
+print(count)
